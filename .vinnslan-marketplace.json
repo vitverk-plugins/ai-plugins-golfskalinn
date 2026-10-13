@@ -1,0 +1,29 @@
+{
+  "format": 1,
+  "origin": "https://vinnslan.golfskalinn.com",
+  "plugin": "vinnslan-golfskalinn-com-a52d4b723c2f",
+  "files": [
+    ".agents/plugins/marketplace.json",
+    ".claude-plugin/marketplace.json",
+    "Install Claude Code.command",
+    "Install Codex.cmd",
+    "Install Codex.command",
+    "README.md",
+    "Sign in to Codex.cmd",
+    "Sign in to Codex.command",
+    "install-codex.ps1",
+    "install-plugin.sh",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/.claude-plugin/plugin.json",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/.codex-plugin/plugin.json",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/.mcp.json",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/assets/logo-dark.svg",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/assets/logo.svg",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/skills/app-authoring/SKILL.md",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/skills/commerce/SKILL.md",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/skills/company/SKILL.md",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/skills/gadget-tools/SKILL.md",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/skills/setup/SKILL.md",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/skills/setup/agents/openai.yaml",
+    "plugins/vinnslan-golfskalinn-com-a52d4b723c2f/skills/website-development/SKILL.md"
+  ]
+}

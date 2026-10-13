@@ -1,0 +1,13 @@
+{
+  "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
+  "owner": {
+    "name": "Vitverk"
+  },
+  "plugins": [
+    {
+      "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
+      "source": "./plugins/vinnslan-golfskalinn-com-a52d4b723c2f",
+      "description": "Use Vinnslan company resources, apps and website development at vinnslan.golfskalinn.com with separately consented permissions."
+    }
+  ]
+}

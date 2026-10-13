@@ -1,0 +1,20 @@
+{
+  "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
+  "interface": {
+    "displayName": "Vinnslan · Golfskálinn"
+  },
+  "plugins": [
+    {
+      "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
+      "source": {
+        "source": "local",
+        "path": "./plugins/vinnslan-golfskalinn-com-a52d4b723c2f"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

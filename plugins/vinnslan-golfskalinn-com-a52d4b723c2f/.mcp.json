@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vinnslan-golfskalinn-com-a52d4b723c2f": {
+      "type": "http",
+      "url": "https://vinnslan.golfskalinn.com/mcp"
+    }
+  }
+}
