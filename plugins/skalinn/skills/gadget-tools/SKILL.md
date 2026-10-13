@@ -1,12 +1,12 @@
 ---
 name: gadget-tools
-description: Use granted Vinnslan gadget MCP tools to read and update tasks and other gadget data. Use when the user asks to work with a Vinnslan instance or its gadgets through MCP.
+description: Use this plugin's granted gadget (app) MCP tools to read and update tasks and other app data. Use when the user asks to work with the connected instance's apps or gadgets through MCP.
 ---
 
-# Vinnslan gadget tools
+# Gadget tools
 
-This plugin connects only to https://vinnslan.golfskalinn.com/mcp through the MCP server named `vinnslan-golfskalinn-com-a52d4b723c2f`.
-When several Vinnslan instances are connected, identify the target instance before a write.
+This plugin connects only to https://vinnslan.golfskalinn.com/mcp through Skálinn's MCP server named `skalinn`.
+When several instances are connected, identify the target instance before a write.
 If the intended instance is unclear, ask the user; do not guess or mix data between instances.
 
 Connect to the configured instance through OAuth.

@@ -1,14 +1,14 @@
 {
-  "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
+  "name": "skalinn",
   "interface": {
-    "displayName": "Vinnslan · Golfskálinn"
+    "displayName": "Skálinn"
   },
   "plugins": [
     {
-      "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
+      "name": "skalinn",
       "source": {
         "source": "local",
-        "path": "./plugins/vinnslan-golfskalinn-com-a52d4b723c2f"
+        "path": "./plugins/skalinn"
       },
       "policy": {
         "installation": "AVAILABLE",

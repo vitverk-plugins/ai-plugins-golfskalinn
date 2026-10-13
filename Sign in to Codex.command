@@ -10,7 +10,7 @@ fi
 if [ -z "$vinnslan_codex" ]; then printf 'Install Codex first, then reopen this sign-in launcher.\n' >&2; exit 1; fi
 printf 'Signing Codex in to %s\nKeep this window open. In your browser, sign in and click Connect.\nIf no browser opens, use the authorization URL printed below.\n' 'https://vinnslan.golfskalinn.com'
 vinnslan_status=0
-"$vinnslan_codex" mcp login 'vinnslan-golfskalinn-com-a52d4b723c2f' --oauth-client-registration dcr || vinnslan_status=$?
+"$vinnslan_codex" mcp login 'skalinn' --oauth-client-registration dcr || vinnslan_status=$?
 if [ "$vinnslan_status" -eq 0 ]; then
   printf '\nSign-in complete. Start a new Codex chat and ask to confirm the instance and list accessible resources without changes.\n'
 else

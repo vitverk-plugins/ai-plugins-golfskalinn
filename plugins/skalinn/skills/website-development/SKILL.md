@@ -1,20 +1,20 @@
 ---
 name: website-development
-description: Directly develop the customer website in Vinnslan boxes from an ordinary Codex chat without SSH or a local checkout.
+description: Develop the Golfskálinn website in Skálinn's hosted development boxes from an ordinary chat, without SSH or a local checkout.
 ---
 
-# Vinnslan · Golfskálinn — website-development
+# Skálinn — website-development
 
-Use only the MCP server named `vinnslan-golfskalinn-com-a52d4b723c2f` at https://vinnslan.golfskalinn.com/mcp for this customer.
+Use only this plugin's Skálinn connection, MCP server `skalinn` at https://vinnslan.golfskalinn.com/mcp.
+Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
 native consent at https://vinnslan.golfskalinn.com/external-access/mcp. Existing gadget consent grants none of these.
-Returning data to Codex is explicit external access; Vinnslan cannot restrict its subsequent use.
+Data returned to this chat leaves Skálinn's sandbox; Skálinn cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
-
 
 The public website project ID is `golfskalinn`; still verify current membership with list_website_projects.
 Use start_website_session with a fresh request UUID, then status until ready. This external session
-never starts Vinnslan's editing agent. All files, commands, logs and submission use plugin tools.
+never starts Skálinn's built-in editing agent. All files, commands, logs and submission use plugin tools.
 No SSH session, local checkout, customer cloud login or infrastructure key is needed or appropriate.
 Read files with their fileRevision and session revision. Preserve both when writing. Reconcile conflicts
 by rereading. Keep one mutation in flight; retain every request ID and receipt.

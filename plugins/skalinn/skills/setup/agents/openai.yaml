@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set up Skálinn"
+  short_description: "Sign in and check your Skálinn connection"
+  default_prompt: "Use $setup to check my Skálinn connection and help finish connecting if needed."

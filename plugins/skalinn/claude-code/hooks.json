@@ -1,0 +1,42 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_website_submit$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn opens a pull request with these website changes. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_website_promote$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn requests production promotion of this website commit. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_app_accept$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn accepts these app draft changes. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_register_workflow$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn registers a persistent workflow. Confirm before it runs.\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Set up Vinnslan"
-  short_description: "Sign in and check your Vinnslan connection"
-  default_prompt: "Use $setup to check my Vinnslan connection and help finish connecting if needed."

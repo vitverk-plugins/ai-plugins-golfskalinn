@@ -1,13 +1,16 @@
 {
-  "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
+  "name": "skalinn",
   "owner": {
     "name": "Vitverk"
   },
+  "metadata": {
+    "description": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions."
+  },
   "plugins": [
     {
-      "name": "vinnslan-golfskalinn-com-a52d4b723c2f",
-      "source": "./plugins/vinnslan-golfskalinn-com-a52d4b723c2f",
-      "description": "Use Vinnslan company resources, apps and website development at vinnslan.golfskalinn.com with separately consented permissions."
+      "name": "skalinn",
+      "source": "./plugins/skalinn",
+      "description": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions."
     }
   ]
 }

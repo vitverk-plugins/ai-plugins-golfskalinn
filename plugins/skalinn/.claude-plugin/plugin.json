@@ -1,0 +1,19 @@
+{
+  "name": "skalinn",
+  "displayName": "Skálinn",
+  "version": "0.1.0+bundle.3813a4a16935",
+  "description": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions.",
+  "author": {
+    "name": "Vitverk"
+  },
+  "homepage": "https://vinnslan.golfskalinn.com/external-access/mcp",
+  "repository": "https://github.com/vitverk-plugins/ai-plugins-golfskalinn",
+  "keywords": [
+    "vitverk",
+    "company",
+    "website",
+    "apps"
+  ],
+  "skills": "./claude-code/skills/",
+  "hooks": "./claude-code/hooks.json"
+}

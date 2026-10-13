@@ -3,12 +3,13 @@ name: commerce
 description: Use available Medusa administration tools with the customer’s actual assignment, role and environment controls.
 ---
 
-# Vinnslan · Golfskálinn — commerce
+# Skálinn — commerce
 
-Use only the MCP server named `vinnslan-golfskalinn-com-a52d4b723c2f` at https://vinnslan.golfskalinn.com/mcp for this customer.
+Use only this plugin's Skálinn connection, MCP server `skalinn` at https://vinnslan.golfskalinn.com/mcp.
+Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
 native consent at https://vinnslan.golfskalinn.com/external-access/mcp. Existing gadget consent grants none of these.
-Returning data to Codex is explicit external access; Vinnslan cannot restrict its subsequent use.
+Data returned to this chat leaves Skálinn's sandbox; Skálinn cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
 
 

@@ -2,7 +2,7 @@
 set -eu
 umask 077
 vinnslan_source=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
-vinnslan_name='vinnslan-golfskalinn-com-a52d4b723c2f'
+vinnslan_name='skalinn'
 printf 'Installing Vinnslan for %s\n' 'https://vinnslan.golfskalinn.com'
 vinnslan_client=codex
 if [ "$#" -gt 0 ]; then vinnslan_client="$1"; fi
