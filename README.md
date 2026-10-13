@@ -19,9 +19,9 @@ say **Use the Vinnslan setup skill to check my connection**. The setup skill che
 before asking you to sign in.
 
 If connection setup needs help, open [Connect Vinnslan to Codex](https://vinnslan.golfskalinn.com/external-access/mcp/connect).
-Choose **Start guided setup** and send the prepared prompt. The agent will help finish connecting.
+Choose **Copy setup prompt**, paste it into a Codex chat, and send it. The agent will help finish connecting.
 If automatic setup is unavailable, [connect through settings](https://vinnslan.golfskalinn.com/external-access/mcp/connect?method=manual)
-shows this instance's existing server and an [Open Codex settings](codex://settings) link.
+shows this instance's existing server and the settings steps.
 Choose **MCP servers**, find **vinnslan-golfskalinn-com-a52d4b723c2f**, and click **Authenticate** if offered.
 In the browser, sign in to https://vinnslan.golfskalinn.com with the account you normally use there. Check the client and
 instance, choose the permissions you want, and click **Connect**. Wait for Codex to confirm success.
