@@ -18,7 +18,9 @@ setup page. Install **Vinnslan · Golfskálinn**, then run the plugin's setup ac
 say **Use the Vinnslan setup skill to check my connection**. The setup skill checks existing access
 before asking you to sign in.
 
-If sign-in is needed, open **Settings → MCP servers**, find **vinnslan-golfskalinn-com-a52d4b723c2f**, and click **Authenticate**.
+If connection setup needs help, open [Finish connecting Codex](https://vinnslan.golfskalinn.com/external-access/mcp#mcp-codex-sign-in).
+That section shows this instance's existing server and an [Open Codex settings](codex://settings) link.
+Choose **MCP servers**, find **vinnslan-golfskalinn-com-a52d4b723c2f**, and click **Authenticate** if offered.
 In the browser, sign in to https://vinnslan.golfskalinn.com with the account you normally use there. Check the client and
 instance, choose the permissions you want, and click **Connect**. Wait for Codex to confirm success.
 If the browser return is blocked after approval, click **finish signing in** on that approval page.

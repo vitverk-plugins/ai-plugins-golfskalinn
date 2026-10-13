@@ -5,7 +5,7 @@ description: Set up or diagnose this Vinnslan plugin, sign in when needed, and v
 
 # Set up Vinnslan
 
-This package targets only https://vinnslan.golfskalinn.com/mcp, with MCP server name `vinnslan-golfskalinn-com-a52d4b723c2f`.
+This is the Vinnslan · Golfskálinn plugin. It targets only https://vinnslan.golfskalinn.com/mcp, with MCP server name `vinnslan-golfskalinn-com-a52d4b723c2f`.
 A setup request authorizes connection checks and starting sign-in, not choosing permissions,
 reading private document contents, changing customer data or granting additional access.
 
@@ -37,9 +37,21 @@ action; do not give a sign-in checklist before the server is available.
 
 For a discovered server that needs authentication, initiate the host's supported login action when
 available. If the host exposes only a connection control, guide the user to that installed plugin's
-Connect/Authenticate control. Give one next step at a time, using the actual displayed name. Use
-Settings → MCP servers in Codex or Customize → Connectors in Claude only after confirming the entry.
-A native-app control blocked by the host is a host limitation, not a Vinnslan consent restriction.
+Connect/Authenticate control, using the actual displayed name.
+
+In Codex desktop, when the installed plugin and bundled endpoint are verified but this chat cannot
+use its tools or operate connection controls, open [Finish connecting Codex](https://vinnslan.golfskalinn.com/external-access/mcp#mcp-codex-sign-in)
+in the built-in browser. Use an available browser-opening tool such as open_in_codex with a browser
+URL target; reuse this instance's tab when possible. The fragment reveals and focuses the help panel.
+Give one concrete next action: click [Open Codex settings](codex://settings), choose **MCP servers**,
+and find the existing server shown on that page. Select **Authenticate** if offered. Name the plugin
+**Vinnslan · Golfskálinn** in the message and keep the help link visible. If the server is missing or disabled,
+ask for that state and refresh/enable the existing plugin through supported controls. Missing tools
+alone do not prove the user is signed out or denied access. Opening Vinnslan's help does not start OAuth.
+
+The native Settings link is for the human to click; do not pass it to a tool that only supports web
+URLs. If no built-in browser tool is available, provide the help link and the same next action.
+In Claude, use its confirmed plugin's connection control or Customize → Connectors.
 
 Use a CLI login only for an existing separately configured server whose name and endpoint you
 have verified. In that case, start and track
