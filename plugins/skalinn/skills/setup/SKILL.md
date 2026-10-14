@@ -59,7 +59,7 @@ action currently needed; keep permission selection and the final Connect click w
 only permissions relevant to their intended work. Returned data leaves Skálinn's sandbox.
 Never ask for secrets in chat or manufacture a login URL. Do not create parallel login attempts or
 replay a pending login. After approval, a blocked callback can use “finish signing in” on the approval
-page; restart only a server-confirmed expired or definitively failed request.
+page; restart only an expired or definitively failed request.
 
 ## Verify and finish
 

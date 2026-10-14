@@ -8,11 +8,9 @@ import {homedir, tmpdir} from 'node:os';
 import {delimiter, join} from 'node:path';
 
 const args = process.argv.slice(2);
-const login = args.includes('--login');
-const noBrowser = args.includes('--no-browser');
+const login = args.length === 1 && args[0] === '--login';
 const emit = (state, fields = {}) => console.log(JSON.stringify({state, ...fields, helpUrl: config.helpUrl}));
-if (!(args.length === 0 || args.length === 1 && ['--check', '--login'].includes(args[0])
-    || args.length === 2 && login && noBrowser)) {
+if (args.length > 1 || args.length === 1 && !['--check', '--login'].includes(args[0])) {
   emit('blocked', {reason: 'invalid_arguments'});
   process.exitCode = 1;
 } else {
@@ -87,33 +85,6 @@ function emitPending(receipt) {
     message: 'An earlier sign-in attempt may still be pending. Do not start another; inspect it through the connection help. Expired receipts also require explicit recovery.'});
 }
 
-async function openDefaultBrowser(url, signal, platform = process.platform) {
-  const command = platform === 'darwin' ? ['open', [url]]
-    : platform === 'win32' ? ['rundll32.exe', ['url.dll,FileProtocolHandler', url]]
-    : platform === 'linux' ? ['xdg-open', [url]] : null;
-  if (!command) return 'unsupported';
-  if (signal.aborted) return 'failed';
-  return new Promise(resolve => {
-    let child;
-    try { child = spawn(command[0], command[1], {stdio: 'ignore', windowsHide: true, shell: false}); }
-    catch { resolve('failed'); return; }
-    let settled = false;
-    const finish = state => {
-      if (settled) return;
-      settled = true;
-      clearTimeout(timer);
-      signal.removeEventListener('abort', cancel);
-      resolve(state);
-    };
-    const cancel = () => { child.kill('SIGKILL'); finish('failed'); };
-    const timer = setTimeout(cancel, 5_000);
-    signal.addEventListener('abort', cancel, {once: true});
-    child.once('error', () => finish('failed'));
-    child.once('exit', code => finish(code === 0 ? 'launched' : 'failed'));
-    if (signal.aborted) cancel();
-  });
-}
-
 async function connect() {
   const binary = await findCodex();
   if (!binary) { emit('unavailable', {reason: 'cli_unavailable'}); process.exitCode = 1; return; }
@@ -130,10 +101,8 @@ async function connect() {
   let receiptPath;
   let terminalLogin = false;
   let signalExitCode;
-  const browserController = new AbortController();
   const fail = reason => {
     failure ||= new Error(reason);
-    browserController.abort();
     for (const {reject, timer} of requests.values()) { clearTimeout(timer); reject(failure); }
     requests.clear();
     completionWait?.reject(failure);
@@ -195,7 +164,9 @@ async function connect() {
     }};
     if (failure) finish(failure); else completionWait.notify();
   });
-  const getServer = async () => {
+  try {
+    await request('initialize', {clientInfo: {name: 'vinnslan_connection_helper', title: 'Vinnslan connection helper', version: '1.0.0'}});
+    child.stdin.write(JSON.stringify({jsonrpc: '2.0', method: 'initialized'}) + '\n');
     const result = await request('mcpServerStatus/list', {serverName: config.server, detail: 'toolsAndAuthOnly'});
     if (!result || !Array.isArray(result.data)) throw new Error('unsupported_protocol');
     if (result.nextCursor || result.data.length > 1) throw new Error('server_ambiguous');
@@ -205,14 +176,7 @@ async function connect() {
       throw new Error('invalid_server_identity');
     }
     if (server.runtimeStatus === 'disabled' || server.enabled === false) throw new Error('server_disabled');
-    return server;
-  };
-  const isAuthenticated = server => server.authStatus === 'oAuth' || server.authStatus === 'bearerToken';
-  try {
-    await request('initialize', {clientInfo: {name: 'vinnslan_connection_helper', title: 'Vinnslan connection helper', version: '1.0.0'}});
-    child.stdin.write(JSON.stringify({jsonrpc: '2.0', method: 'initialized'}) + '\n');
-    const server = await getServer();
-    if (isAuthenticated(server)) {
+    if (server.authStatus === 'oAuth' || server.authStatus === 'bearerToken') {
       emit('connected'); return;
     }
     if (server.authStatus !== 'notLoggedIn') throw new Error('auth_unsupported');
@@ -231,22 +195,16 @@ async function connect() {
     if (url.protocol !== 'https:' || url.origin !== config.origin || url.username || url.password || url.hash) {
       throw new Error('invalid_authorization_url');
     }
-    const browser = noBrowser ? 'manual' : await openDefaultBrowser(started.authorizationUrl, browserController.signal);
-    if (failure) throw failure;
-    emit('awaiting_sign_in', {authorizationUrl: started.authorizationUrl, loginId: started.loginId, browser});
+    emit('awaiting_sign_in', {authorizationUrl: url.href, loginId: started.loginId});
     await waitForCompletion(started.loginId);
-    if (!isAuthenticated(await getServer())) throw new Error('sign_in_unverified');
-    const completionUrl = new URL('/external-access/mcp/connect?step=complete', config.origin).href;
-    const completionBrowser = noBrowser ? 'manual' : await openDefaultBrowser(completionUrl, browserController.signal);
-    if (failure) throw failure;
-    emit('sign_in_complete', {completionUrl, browser: completionBrowser});
+    emit('sign_in_complete');
   } catch (error) {
     const allowedReasons = ['cli_unavailable', 'child_exited', 'unsupported_protocol', 'rpc_timeout', 'status_unavailable',
       'server_absent', 'server_ambiguous', 'invalid_server_identity', 'server_disabled', 'auth_unsupported',
       'pending_receipt_unavailable', 'unsafe_pending_directory', 'invalid_login_response', 'invalid_authorization_url',
-      'sign_in_timeout', 'sign_in_failed', 'sign_in_unverified', 'interrupted'];
+      'sign_in_timeout', 'sign_in_failed', 'interrupted'];
     const reason = error instanceof Error && allowedReasons.includes(error.message) ? error.message : 'status_unavailable';
-    const blocked = ['server_absent', 'server_ambiguous', 'invalid_server_identity', 'server_disabled', 'auth_unsupported', 'sign_in_failed', 'sign_in_unverified', 'unsafe_pending_directory'].includes(reason);
+    const blocked = ['server_absent', 'server_ambiguous', 'invalid_server_identity', 'server_disabled', 'auth_unsupported', 'sign_in_failed', 'unsafe_pending_directory'].includes(reason);
     emit(blocked ? 'blocked' : loginRequested ? 'pending' : 'unavailable', {reason,
       ...(loginRequested && !blocked ? {message: 'Sign-in may still be pending. Do not start another attempt; use the connection help to inspect its state.'} : {})});
     process.exitCode = signalExitCode || 1;

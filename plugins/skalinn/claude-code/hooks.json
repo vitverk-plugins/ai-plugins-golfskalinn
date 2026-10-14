@@ -29,6 +29,42 @@
         ]
       },
       {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_app_revert_draft$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn undoes app draft changes. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_app_set_tools_enabled$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn changes which apps connected AI clients can use. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_rename_workspace$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn renames a workspace. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_app_rename$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn renames an app. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
         "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_register_workflow$",
         "hooks": [
           {

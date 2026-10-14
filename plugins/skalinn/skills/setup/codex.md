@@ -13,32 +13,11 @@ can supply Node's path. Do not install a runtime or CLI to complete setup.
 The helper checks the installed plugin identity and origin through Codex's public app-server API.
 `connected` confirms helper-side authentication; still verify this chat's tools. Only
 `authentication_required` calls for running the same helper with `--login`, once. Keep that command
-and its subprocess session alive. By default it opens the exact verified authorizationUrl once in
-the system's default external browser, where an existing Vinnslan sign-in can be reused. On
-`awaiting_sign_in`, `browser: "launched"` confirms browser dispatch only: do not also open the URL
-with a host browser tool. Ask the human to sign in, review access and click Connect.
-
-If the human explicitly chooses a built-in or other browser before login starts, use
-`--login --no-browser` instead, then open the exact returned authorizationUrl in their chosen
-browser. `browser: "manual"`, `"failed"` or `"unsupported"` means the URL still needs opening;
-offer that same URL to open or copy into their signed-in browser. Keep the existing attempt alive
-while they do so; changing browsers never calls for another login. Never reconstruct a login URL.
-
-Retain the original command's job/session handle and poll that same subprocess with waits of at
-most 60 seconds. Give a brief commentary update while the human acts, then continue waiting and
-resume verification automatically; they do not need to send another chat message. Do not send a
-final response merely because sign-in is awaiting human action. Continue until matching completion,
-a concrete blocker such as timeout or an inaccessible process, or the human asks to stop.
-`sign_in_complete` confirms the matching OAuth completion and a fresh authenticated helper check.
-The default helper opens its fixed same-origin completionUrl once; this may open a new browser tab.
-In no-browser mode, navigate the chosen sign-in tab to that completionUrl when possible. If its
-browser launch failed, offer the returned completionUrl without starting another login. Refresh
-tool discovery and verify authenticated tools in this chat before reporting access.
-
-Never automatically replay a pending/interrupted helper. `pending` requires inspecting the
-existing command before any restart; attach to and poll it when available. An expired receipt still
-needs manual recovery; restart a server-confirmed expired or definitively failed request only after
-pending-receipt recovery. `unavailable` or `blocked` calls for the manual page below.
+and its subprocess session alive. On `awaiting_sign_in`, open its exact returned authorizationUrl
+in the built-in browser and ask the human to sign in, review access and click Connect. Track the
+matching completion; then refresh discovery and verify authenticated tools. Never reconstruct a
+login URL or automatically replay a pending/interrupted helper. `pending` requires inspecting the
+existing command before any restart; an expired receipt still needs manual recovery. `unavailable` or `blocked` calls for the manual page below.
 A successful browser approval or helper completion alone does not prove this chat has loaded tools.
 
 If the host exposes only a connection control, guide the user to that installed plugin's

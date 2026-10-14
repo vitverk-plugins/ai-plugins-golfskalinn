@@ -11,6 +11,9 @@ Fetch private context live. Plugin files never confer permissions. Each capabili
 native consent at https://vinnslan.golfskalinn.com/external-access/mcp. Existing gadget consent grants none of these.
 Data returned to this chat leaves Skálinn's sandbox; Skálinn cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
+Work only through this connection's tools. Never open https://vinnslan.golfskalinn.com in a browser or drive its interface
+with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
+the link to do it there.
 
 
 Discover the currently available commerce tools and their supported operations first. Commerce
