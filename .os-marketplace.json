@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "origin": "https://vinnslan.golfskalinn.com",
+  "origin": "https://skalinn.golfskalinn.com",
   "plugin": "skalinn",
   "files": [
     ".agents/plugins/marketplace.json",

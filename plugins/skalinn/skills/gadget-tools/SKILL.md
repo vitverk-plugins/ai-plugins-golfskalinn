@@ -5,7 +5,7 @@ description: Use this plugin's granted gadget (app) MCP tools to read and update
 
 # Gadget tools
 
-This plugin connects only to https://vinnslan.golfskalinn.com/mcp through Skálinn's MCP server named `skalinn`.
+This plugin connects only to https://skalinn.golfskalinn.com/mcp through Skálinn's MCP server named `skalinn`.
 When several instances are connected, identify the target instance before a write.
 If the intended instance is unclear, ask the user; do not guess or mix data between instances.
 

@@ -4,13 +4,13 @@
     "name": "Vitverk"
   },
   "metadata": {
-    "description": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions."
+    "description": "Skálinn: company context, apps and website development at skalinn.golfskalinn.com, each with separately consented permissions."
   },
   "plugins": [
     {
       "name": "skalinn",
       "source": "./plugins/skalinn",
-      "description": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions."
+      "description": "Skálinn: company context, apps and website development at skalinn.golfskalinn.com, each with separately consented permissions."
     }
   ]
 }

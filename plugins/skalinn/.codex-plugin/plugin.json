@@ -1,7 +1,7 @@
 {
   "name": "skalinn",
-  "version": "0.1.0+bundle.b4cc453539df",
-  "description": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions.",
+  "version": "0.1.0+bundle.a6f8e8529842",
+  "description": "Skálinn: company context, apps and website development at skalinn.golfskalinn.com, each with separately consented permissions.",
   "author": {
     "name": "Vitverk"
   },
@@ -15,14 +15,14 @@
   "interface": {
     "displayName": "Skálinn",
     "shortDescription": "Company tools, apps and website development.",
-    "longDescription": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions. One connection follows enabled and shared gadgets. Context, business data, development, outputs, automation, commerce and delivery each require separate native consent. Existing roles, approvals and reviews still apply.",
+    "longDescription": "Skálinn: company context, apps and website development at skalinn.golfskalinn.com, each with separately consented permissions. One connection follows enabled and shared gadgets. Context, business data, development, outputs, automation, commerce and delivery each require separate native consent. Existing roles, approvals and reviews still apply.",
     "developerName": "Vitverk",
     "category": "Productivity",
     "capabilities": [
       "Read",
       "Write"
     ],
-    "websiteURL": "https://vinnslan.golfskalinn.com/external-access/mcp",
+    "websiteURL": "https://skalinn.golfskalinn.com/external-access/mcp",
     "composerIcon": "./assets/logo.svg",
     "logo": "./assets/logo.svg",
     "logoDark": "./assets/logo-dark.svg",

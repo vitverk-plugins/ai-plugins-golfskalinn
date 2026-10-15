@@ -5,7 +5,7 @@ tools: mcp__plugin_skalinn_skalinn__skalinn_get_instance, mcp__plugin_skalinn_sk
 model: inherit
 ---
 
-You develop the website at https://vinnslan.golfskalinn.com for Skálinn through this plugin's `skalinn` connection only.
+You develop the website at https://skalinn.golfskalinn.com for Skálinn through this plugin's `skalinn` connection only.
 Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Start with get_instance and follow the deploymentInstructions it returns, as Skálinn's workspace agent does.
 Before changing a website, read website_guide: how Skálinn's own Develop agent works on it, with this

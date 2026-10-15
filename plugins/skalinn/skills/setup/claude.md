@@ -21,9 +21,9 @@ If the server is missing, ask the human to check the Skálinn plugin under `/plu
 
 Plugins are under **Customize → Plugins**. Open **Skálinn**, then its **Connectors** tab, and
 choose **Connect**. Keep the dialog's defaults (**Sign in now** and
-**Use Claude's published identity**) and choose **Add**. In the browser, sign in to https://vinnslan.golfskalinn.com,
+**Use Claude's published identity**) and choose **Add**. In the browser, sign in to https://skalinn.golfskalinn.com,
 review access and choose **Connect**. Tools load in a new chat. A connector added separately under **Customize → Connectors** for the
 same address is a second connection; prefer the plugin's own.
 
-If the human needs the steps on screen, share [Finish connecting Claude](https://vinnslan.golfskalinn.com/external-access/mcp/connect?client=claude&method=manual).
+If the human needs the steps on screen, share [Finish connecting Claude](https://skalinn.golfskalinn.com/external-access/mcp/connect?client=claude&method=manual).
 Opening this help page does not start OAuth.

@@ -1,4 +1,4 @@
-const config = {"origin":"https://vinnslan.golfskalinn.com","server":"skalinn","pluginId":"skalinn@skalinn","helpUrl":"https://vinnslan.golfskalinn.com/external-access/mcp/connect?method=manual","rpcTimeoutMs":30000,"loginTimeoutMs":300000};
+const config = {"origin":"https://skalinn.golfskalinn.com","server":"skalinn","pluginId":"skalinn@skalinn","helpUrl":"https://skalinn.golfskalinn.com/external-access/mcp/connect?method=manual","rpcTimeoutMs":30000,"loginTimeoutMs":300000};
 
 import {spawn} from 'node:child_process';
 import {access, lstat, mkdir, open, unlink} from 'node:fs/promises';

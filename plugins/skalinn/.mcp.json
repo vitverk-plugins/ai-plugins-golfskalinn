@@ -2,7 +2,7 @@
   "mcpServers": {
     "skalinn": {
       "type": "http",
-      "url": "https://vinnslan.golfskalinn.com/mcp"
+      "url": "https://skalinn.golfskalinn.com/mcp"
     }
   }
 }

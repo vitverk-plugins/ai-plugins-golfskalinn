@@ -5,13 +5,13 @@ description: Use available Medusa administration tools with the customer’s act
 
 # Skálinn — commerce
 
-Use only this plugin's Skálinn connection, MCP server `skalinn` at https://vinnslan.golfskalinn.com/mcp.
+Use only this plugin's Skálinn connection, MCP server `skalinn` at https://skalinn.golfskalinn.com/mcp.
 Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
-native consent at https://vinnslan.golfskalinn.com/external-access/mcp. Existing gadget consent grants none of these.
+native consent at https://skalinn.golfskalinn.com/external-access/mcp. Existing gadget consent grants none of these.
 Data returned to this chat leaves Skálinn's sandbox; Skálinn cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
-Work only through this connection's tools. Never open https://vinnslan.golfskalinn.com in a browser or drive its interface
+Work only through this connection's tools. Never open https://skalinn.golfskalinn.com in a browser or drive its interface
 with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
 the link to do it there.
 

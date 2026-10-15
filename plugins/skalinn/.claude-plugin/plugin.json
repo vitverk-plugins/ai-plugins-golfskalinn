@@ -1,12 +1,12 @@
 {
   "name": "skalinn",
   "displayName": "Skálinn",
-  "version": "0.1.0+bundle.b4cc453539df",
-  "description": "Skálinn: company context, apps and website development at vinnslan.golfskalinn.com, each with separately consented permissions.",
+  "version": "0.1.0+bundle.a6f8e8529842",
+  "description": "Skálinn: company context, apps and website development at skalinn.golfskalinn.com, each with separately consented permissions.",
   "author": {
     "name": "Vitverk"
   },
-  "homepage": "https://vinnslan.golfskalinn.com/external-access/mcp",
+  "homepage": "https://skalinn.golfskalinn.com/external-access/mcp",
   "repository": "https://github.com/vitverk-plugins/ai-plugins-golfskalinn",
   "keywords": [
     "vitverk",

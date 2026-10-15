@@ -1,13 +1,13 @@
 $ErrorActionPreference = 'Stop'
 try {
   $pluginName = 'skalinn'
-  Write-Host ('Installing the plugin for ' + 'https://vinnslan.golfskalinn.com')
+  Write-Host ('Installing the plugin for ' + 'https://skalinn.golfskalinn.com')
   $pluginCodex = Get-Command codex -ErrorAction SilentlyContinue
   if (-not $pluginCodex) { throw 'Codex CLI was not found. Install Codex CLI, then run this installer again.' }
-  $pluginHome = $env:VINNSLAN_PLUGIN_HOME
-  if (-not $pluginHome) { $pluginHome = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'Vinnslan\Plugins' }
+  $pluginHome = $env:VITVERK_PLUGIN_HOME
+  if (-not $pluginHome) { $pluginHome = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'Vitverk\Plugins' }
   $pluginTarget = Join-Path $pluginHome $pluginName
-  $pluginMarker = Join-Path $pluginTarget '.vinnslan-installer'
+  $pluginMarker = Join-Path $pluginTarget '.vitverk-installer'
   if (Test-Path -LiteralPath $pluginTarget) {
     $pluginItem = Get-Item -LiteralPath $pluginTarget
     if (($pluginItem.Attributes -band [IO.FileAttributes]::ReparsePoint) -or -not (Test-Path -LiteralPath $pluginMarker) -or (Get-Content -LiteralPath $pluginMarker -Raw).Trim() -ne $pluginName) {

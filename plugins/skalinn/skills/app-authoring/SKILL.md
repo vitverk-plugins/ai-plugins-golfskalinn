@@ -5,13 +5,13 @@ description: Create and edit Skálinn app drafts, outputs and persistent workflo
 
 # Skálinn — app-authoring
 
-Use only this plugin's Skálinn connection, MCP server `skalinn` at https://vinnslan.golfskalinn.com/mcp.
+Use only this plugin's Skálinn connection, MCP server `skalinn` at https://skalinn.golfskalinn.com/mcp.
 Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
-native consent at https://vinnslan.golfskalinn.com/external-access/mcp. Existing gadget consent grants none of these.
+native consent at https://skalinn.golfskalinn.com/external-access/mcp. Existing gadget consent grants none of these.
 Data returned to this chat leaves Skálinn's sandbox; Skálinn cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
-Work only through this connection's tools. Never open https://vinnslan.golfskalinn.com in a browser or drive its interface
+Work only through this connection's tools. Never open https://skalinn.golfskalinn.com in a browser or drive its interface
 with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
 the link to do it there.
 
@@ -46,3 +46,10 @@ reply. Unknown registration never permits a new request ID to repeat it.
 Registration remains disabled until the user enables its hook in native Connections. Portal audience
 assignment remains native. Do not substitute a client-side scheduled task or automation: execution
 belongs in Skálinn and must continue with this chat closed.
+Public sites: read site_guide before writing one, and follow it: link the deployment's stylesheet and
+logo, and the admins' guidelines. The app's [restore](params) returns a PublicSite; accept the app,
+then register the site with site_publish (its commitId, restore params and a kept requestId). It is
+served only once the workspace owner turns it on with site_turn_on, which makes the whole workspace
+public: ask them first, saying so. Then it is at a private link (site_list); check its pages with
+site_preview, from a draft's version too, and give the user the private link to open. Take it live
+at its own address with site_go_live, or back with site_make_private, only when the user asks.
