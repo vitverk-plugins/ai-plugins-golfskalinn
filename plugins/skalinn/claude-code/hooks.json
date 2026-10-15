@@ -20,6 +20,15 @@
         ]
       },
       {
+        "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_website_take_over$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"skalinn moves one of your website sessions to this connection. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
         "matcher": "^mcp__plugin_skalinn_skalinn__skalinn_app_accept$",
         "hooks": [
           {
